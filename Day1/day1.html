@@ -54,6 +54,40 @@
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
+    <script kind="utterances">
+
+    var commentsRunWhenDOMLoaded = cb => {
+    if (document.readyState != 'loading') {
+        cb()
+    } else if (document.addEventListener) {
+        document.addEventListener('DOMContentLoaded', cb)
+    } else {
+        document.attachEvent('onreadystatechange', function() {
+        if (document.readyState == 'complete') cb()
+        })
+    }
+}
+
+var addUtterances = () => {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src = "https://utteranc.es/client.js";
+    script.async = "async";
+
+    script.setAttribute("repo", "NguyenDinhTiem/aio.primer");
+    script.setAttribute("issue-term", "pathname");
+    script.setAttribute("theme", "github-light");
+    script.setAttribute("label", "💬 comment");
+    script.setAttribute("crossorigin", "anonymous");
+
+    sections = document.querySelectorAll("div.section");
+    if (sections !== null) {
+        section = sections[sections.length-1];
+        section.appendChild(script);
+    }
+}
+commentsRunWhenDOMLoaded(addUtterances);
+</script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -63,8 +97,10 @@ const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'Day1/day1';</script>
+    <link rel="canonical" href="https://nguyendinhtiem.github.io/aio.primer/Day1/day1.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Day 2: Tạo Biến và In Ra Màn Hình, Xử lý Lỗi Cú Pháp" href="../Day2/day2.html" />
     <link rel="prev" title="AI VIETNAM XIN CHÀO!" href="../intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -169,6 +205,7 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Day 1: Hướng dẫn sử dụng VScode, jupyter notebook và cài đặt, tạo môi trường lập trình trên máy tính.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Day2/day2.html">Day 2: Tạo Biến và In Ra Màn Hình, Xử lý Lỗi Cú Pháp</a></li>
 </ul>
 
     </div>
@@ -341,7 +378,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -357,6 +396,15 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bai-tap">Bài tập</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#huong-dan-giai-bai-tap-demo">Hướng dẫn giải bài tập(demo)</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -368,7 +416,9 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="day-1-huong-dan-su-dung-vscode-jupyter-notebook-va-cai-dat-tao-moi-truong-lap-trinh-tren-may-tinh">
 <h1>Day 1: Hướng dẫn sử dụng VScode, jupyter notebook và cài đặt, tạo môi trường lập trình trên máy tính.<a class="headerlink" href="#day-1-huong-dan-su-dung-vscode-jupyter-notebook-va-cai-dat-tao-moi-truong-lap-trinh-tren-may-tinh" title="Permalink to this heading">#</a></h1>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/s9SMRJtsqF0?si=fce9o1n2JGKjxWVs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><div class="cell docutils container">
+<section id="bai-tap">
+<h2>Bài tập<a class="headerlink" href="#bai-tap" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;hello&quot;</span><span class="p">)</span>
 </pre></div>
@@ -380,6 +430,10 @@ document.write(`
 </div>
 </div>
 </div>
+</section>
+<section id="huong-dan-giai-bai-tap-demo">
+<h2>Hướng dẫn giải bài tập(demo)<a class="headerlink" href="#huong-dan-giai-bai-tap-demo" title="Permalink to this heading">#</a></h2>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/s9SMRJtsqF0?si=fce9o1n2JGKjxWVs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -421,12 +475,36 @@ document.write(`
         <p class="prev-next-title">AI VIETNAM XIN CHÀO!</p>
       </div>
     </a>
+    <a class="right-next"
+       href="../Day2/day2.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Day 2: Tạo Biến và In Ra Màn Hình, Xử lý Lỗi Cú Pháp</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bai-tap">Bài tập</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#huong-dan-giai-bai-tap-demo">Hướng dẫn giải bài tập(demo)</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
@@ -437,7 +515,7 @@ document.write(`
   <div class="footer-item">
     
 <p class="component-author">
-By AIVIETNAM
+By AI VIETNAM
 </p>
 
   </div>
