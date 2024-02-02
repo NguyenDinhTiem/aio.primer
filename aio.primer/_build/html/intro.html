@@ -54,6 +54,40 @@
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="_static/togglebutton.js"></script>
+    <script kind="utterances">
+
+    var commentsRunWhenDOMLoaded = cb => {
+    if (document.readyState != 'loading') {
+        cb()
+    } else if (document.addEventListener) {
+        document.addEventListener('DOMContentLoaded', cb)
+    } else {
+        document.attachEvent('onreadystatechange', function() {
+        if (document.readyState == 'complete') cb()
+        })
+    }
+}
+
+var addUtterances = () => {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src = "https://utteranc.es/client.js";
+    script.async = "async";
+
+    script.setAttribute("repo", "NguyenDinhTiem/aio.primer");
+    script.setAttribute("issue-term", "pathname");
+    script.setAttribute("theme", "github-light");
+    script.setAttribute("label", "💬 comment");
+    script.setAttribute("crossorigin", "anonymous");
+
+    sections = document.querySelectorAll("div.section");
+    if (sections !== null) {
+        section = sections[sections.length-1];
+        section.appendChild(script);
+    }
+}
+commentsRunWhenDOMLoaded(addUtterances);
+</script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
@@ -63,6 +97,7 @@ const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'intro';</script>
+    <link rel="canonical" href="https://nguyendinhtiem.github.io/aio.primer/intro.html" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Day 1: Hướng dẫn sử dụng VScode, jupyter notebook và cài đặt, tạo môi trường lập trình trên máy tính." href="Day1/day1.html" />
@@ -369,8 +404,8 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="ai-vietnam-xin-chao">
 <h1>AI VIETNAM XIN CHÀO!<a class="headerlink" href="#ai-vietnam-xin-chao" title="Permalink to this heading">#</a></h1>
-<p>“Mình chỉ muốn code tốt hơn!”là một cuốn sách hướng dẫn thực hành Python dành cho người mới bắt đầu học lập trình. Với mục tiêu xây dựng nền tảng cở bản cho người đọc, chúng tôi thiết kế nội dung cuốn sách tập trung vào những kiến thức trọng tâm trong Python, và đặc biệt chú trọng việc thực hành.</p>
-<p>Mỗi “Day” là một bài học, chủ yếu là hướng dẫn làm một bài tập nào  đó, đôi khi sẽ có một bài viết về chủ đề nào đó thú vị. Bạn sẽ đọc đề bài và thực hành làm theo, nó dễ lắm luôn(nhưng bài khó cũng có thể bất ngờ xuất hiện), đối với học viên AIO các bạn có thể thảo luận, trao đổi thoải mái trong group fb “Mình chỉ muốn code tốt hơn”, ngoài ra các bạn có thể yêu cầu sự trợ giúp từ TA. Và đi kèm với mỗi bài tập sẽ có video hướng dẫn giải chi tiết sau đó.</p>
+<p>“Mình chỉ muốn code tốt hơn!” là một cuốn sách hướng dẫn thực hành Python dành cho người mới bắt đầu học lập trình. Với mục tiêu xây dựng nền tảng cở bản cho người đọc, chúng tôi thiết kế nội dung cuốn sách tập trung vào những kiến thức trọng tâm trong Python, và đặc biệt chú trọng việc thực hành.</p>
+<p>Mỗi “Day” là một bài học, chủ yếu là hướng dẫn làm một bài tập nào  đó. Bạn sẽ đọc đề bài và thực hành làm theo, nó dễ lắm luôn(nhưng bài khó cũng có thể bất ngờ xuất hiện), đối với học viên AIO các bạn có thể thảo luận, trao đổi thoải mái trong group facebook “Mình chỉ muốn code tốt hơn”, ngoài ra các bạn có thể yêu cầu sự trợ giúp từ TA. Và đi kèm với mỗi bài tập sẽ có video hướng dẫn giải chi tiết sau đó.</p>
 <p>Và không dài dòng thêm nữa, bạn hãy sắn tay lên và bắt đầu và tóm gọn các kiến thức dưới đây nhé:</p>
 <div class="toctree-wrapper compound">
 <ul>
@@ -435,7 +470,7 @@ document.write(`
   <div class="footer-item">
     
 <p class="component-author">
-By AIVIETNAM
+By AI VIETNAM
 </p>
 
   </div>
