@@ -207,6 +207,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../Day1/day1.html">Day 1: Hướng dẫn sử dụng VScode, jupyter notebook và cài đặt, tạo môi trường lập trình trên máy tính.</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Day 2: Tạo Biến và In Ra Màn Hình, Xử lý Lỗi Cú Pháp</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Day3/day3.html">Day 3: Tạo Biến String và Sử Dụng Các Phương Thức</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Day4/day4.html">Day 3: Tạo Biến String và Sử Dụng Các Phương Thức</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introspection/introspection.html">Introspection trong Python</a></li>
 </ul>
 
     </div>
@@ -419,21 +421,82 @@ document.write(`
 <h1>Day 2: Tạo Biến và In Ra Màn Hình, Xử lý Lỗi Cú Pháp<a class="headerlink" href="#day-2-tao-bien-va-in-ra-man-hinh-xu-ly-loi-cu-phap" title="Permalink to this heading">#</a></h1>
 <section id="bai-tap">
 <h2>Bài tập<a class="headerlink" href="#bai-tap" title="Permalink to this heading">#</a></h2>
+<p>Viết chương trình với yêu cầu dưới đây, mỗi yêu cầu bạn sẽ viết nó trong một cell trong file jupyter notebook.</p>
+<ol class="arabic simple">
+<li><p>Bạn hãy tạo file và đặt tên file bất kỳ nhưng theo quy ước về cách đặt tên trong Python là tên viết thường và mỗi từ cách nhau bởi dấu gạch dưới “<code class="docutils literal notranslate"><span class="pre">_</span></code>”, ví dụ như <code class="docutils literal notranslate"><span class="pre">simple_message.ipynb</span></code>. Sau đó hãy lập trình in câu <code class="docutils literal notranslate"><span class="pre">&quot;Hello</span> <span class="pre">world!&quot;</span></code> ra màn hình.</p></li>
+<li><p>Gán một câu <code class="docutils literal notranslate"><span class="pre">&quot;Have</span> <span class="pre">a</span> <span class="pre">nice</span> <span class="pre">day!&quot;</span></code> vào biến <code class="docutils literal notranslate"><span class="pre">message</span></code>. Sau đó sử dụng câu lệnh print để hiển thị biến này ra màn hình.</p></li>
+<li><p>Bạn tạo một câu chứa nội dung <code class="docutils literal notranslate"><span class="pre">&quot;Let's</span> <span class="pre">have</span> <span class="pre">Tet</span> <span class="pre">holidays!&quot;</span></code> và gán vào biến với tên <code class="docutils literal notranslate"><span class="pre">1_message</span></code>. Sau đó sử dụng câu lệnh print để hiển thị biến này ra màn hình. Nếu kết quả hiển thị thông báo lỗi, hãy xác định lỗi này là gì và sửa như thế nào? Sau đó chạy lại chương trình.</p></li>
+</ol>
+</section>
+<section id="huong-dan-giai">
+<h2>Hướng dẫn giải<a class="headerlink" href="#huong-dan-giai" title="Permalink to this heading">#</a></h2>
+<p>Trong bài tập này bạn sẽ làm quen với câu lệnh hiển thị ra màn hình print, cách tạo biến, đặt tên biến đúng cách trong Python. Biến trong Python là tên được sử dụng để tham chiếu đến một vùng lưu trữ dữ liệu trong bộ nhớ, tên của biến là cách chúng ta đặt cho vùng lưu trữ đó để có thể truy cập và thao tác với dữ liệu trong chương trình của mình. Khi đặt tên biến sẽ có một số quy tắc mà bạn cần chú ý:</p>
+<ul class="simple">
+<li><p>Tên biến có thể chứa chữ cái, số, dấu gạch dưới “_”. Tên biến có thể bắt đầu bằng chữ cái, dấu gạch dưới, nhưng không được là số. Ví dụ: <code class="docutils literal notranslate"><span class="pre">message_1</span></code>, <code class="docutils literal notranslate"><span class="pre">_massage</span></code> nhưng không thể đặt là <code class="docutils literal notranslate"><span class="pre">1_message</span></code>.</p></li>
+<li><p>Tên biến có thể gồm nhiều từ, nhưng mỗi từ phải được viết liền, không được sử dụng khoảng trắng. Ví dụ <code class="docutils literal notranslate"><span class="pre">fresh_apple</span></code> nhưng không thể đặt là <code class="docutils literal notranslate"><span class="pre">fresh</span> <span class="pre">apple</span></code></p></li>
+<li><p>Không được đặt tên biến trùng với những từ khóa và tên hàm trong Python. Ví dụ: Không nên đặt tên biến là <code class="docutils literal notranslate"><span class="pre">list</span></code>, <code class="docutils literal notranslate"><span class="pre">for</span></code>, <code class="docutils literal notranslate"><span class="pre">from</span></code>, <code class="docutils literal notranslate"><span class="pre">if</span></code>, <code class="docutils literal notranslate"><span class="pre">is</span></code>, <code class="docutils literal notranslate"><span class="pre">False</span></code>…</p></li>
+<li><p>Tên biến chỉ cần ngắn thôi nhưng phải rõ ràng, nếu không thì có thể tạo tên dài hơn mà rõ ràng cũng được. Ví dụ: <code class="docutils literal notranslate"><span class="pre">student_name</span></code> với <code class="docutils literal notranslate"><span class="pre">s_n</span></code> thì nên dùng biến tên <code class="docutils literal notranslate"><span class="pre">student_name</span></code> vì khi đọc sẽ hiểu ngay.</p></li>
+<li><p>Bạn cũng nên cẩn thận khi sử dụng tên biến chứa chữ <code class="docutils literal notranslate"><span class="pre">l</span></code> và <code class="docutils literal notranslate"><span class="pre">o</span></code>, vì nó giống số <code class="docutils literal notranslate"><span class="pre">1</span></code> và <code class="docutils literal notranslate"><span class="pre">0</span></code> nên có thể gây ra nhầm lẫn nếu quan sát không kỹ.</p></li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;hello&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Câu 1</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello World!&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>hello
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hello World!
 </pre></div>
 </div>
 </div>
 </div>
-</section>
-<section id="huong-dan-giai">
-<h2>Hướng dẫn giải<a class="headerlink" href="#huong-dan-giai" title="Permalink to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Câu 2</span>
+<span class="n">message</span> <span class="o">=</span> <span class="s2">&quot;Have a nice day!&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Have a nice day!
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Câu 3</span>
+<span class="mi">1</span><span class="n">_message</span> <span class="o">=</span> <span class="s2">&quot;Let&#39;s have Tet holidays!&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">1</span><span class="n">_message</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">    </span><span class="mi">1</span><span class="n">_message</span> <span class="o">=</span> <span class="s2">&quot;Let&#39;s have Tet holidays!&quot;</span>
+     <span class="o">^</span>
+<span class="ne">SyntaxError</span>: invalid decimal literal
+</pre></div>
+</div>
+</div>
+</div>
+<p>Đoạn code trên xuất hiện thông báo lỗi cú pháp tạo dòng thứ 2, lỗi này là do chúng ta đã đặt tên biến không đúng quy tắc trong Python. Để sửa lỗi thì chúng ta cần đặt lại tên biến đúng ví dụ như: <code class="docutils literal notranslate"><span class="pre">message</span></code>, <code class="docutils literal notranslate"><span class="pre">message_1</span></code> chẳng hạn.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Câu 3</span>
+<span class="n">message_1</span> <span class="o">=</span> <span class="s2">&quot;Let&#39;s have Tet holidays!&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">message_1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Let&#39;s have Tet holidays!
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 </section>
 

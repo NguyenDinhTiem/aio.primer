@@ -100,6 +100,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="canonical" href="https://nguyendinhtiem.github.io/aio.primer/Day4/day4.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Introspection trong Python" href="../introspection/introspection.html" />
     <link rel="prev" title="Day 3: Tạo Biến String và Sử Dụng Các Phương Thức" href="../Day3/day3.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -207,6 +208,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../Day2/day2.html">Day 2: Tạo Biến và In Ra Màn Hình, Xử lý Lỗi Cú Pháp</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Day3/day3.html">Day 3: Tạo Biến String và Sử Dụng Các Phương Thức</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Day 3: Tạo Biến String và Sử Dụng Các Phương Thức</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../introspection/introspection.html">Introspection trong Python</a></li>
 </ul>
 
     </div>
@@ -379,7 +381,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
 </div></div>
       
     </div>
@@ -395,6 +399,15 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bai-tap">Bài tập</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#huong-dan-giai">Hướng dẫn giải</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -406,18 +419,136 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="day-3-tao-bien-string-va-su-dung-cac-phuong-thuc">
 <h1>Day 3: Tạo Biến String và Sử Dụng Các Phương Thức<a class="headerlink" href="#day-3-tao-bien-string-va-su-dung-cac-phuong-thuc" title="Permalink to this heading">#</a></h1>
+<section id="bai-tap">
+<h2>Bài tập<a class="headerlink" href="#bai-tap" title="Permalink to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Tạo một biến name đại diện tên của bạn, và hiển thị ra màn hình một thông báo chứa tên đó. Ví dụ mình tên Tom, mình sẽ in ra màn hình nội dung như “Tom love fish!”</p></li>
+<li><p>Tạo một biến tham chiếu đến tên của một người, sau đó thực hiện in ra màn hình tên người đó được viết toàn bộ bằng chữ thường, chữ hoa, hoặc chỉ viết hoa từ đầu tiên mỗi chữ.</p></li>
+</ol>
+</section>
+<section id="huong-dan-giai">
+<h2>Hướng dẫn giải<a class="headerlink" href="#huong-dan-giai" title="Permalink to this heading">#</a></h2>
+<p>Để làm bài tập này, chúng ta sẽ nhắc lại một số kiến thức cơ bản về kiểu dữ liệu String trong Python. String là một tập hợp các ký tự được đặt trong dấu nháy đơn ‘string here’ hoặc dấu nháy kép “string here”.</p>
+<p>Ví dụ: “Have a nice day!” hoặc ‘You’re so beautifull’</p>
+<p>Và không thể quên những biến đổi đơn giản trong string như:</p>
+<ul class="simple">
+<li><p>Sử dụng <em>title</em> khi muốn viết hoa những chữ cái đầu tiên của từ trong chuỗi</p></li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;hello&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Viêt hoa chữ cái đầu tiên của mỗi từ trong chuỗi</span>
+<span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;taylor swift&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">name</span><span class="o">.</span><span class="n">title</span><span class="p">())</span> 
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>hello
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Taylor Swift
 </pre></div>
 </div>
 </div>
 </div>
+<ul class="simple">
+<li><p>Sử dụng <em>upper</em> khi muốn viết hoa toàn bộ các từ trong chuỗi</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Chuyển chuỗi thành chữ hoa</span>
+<span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Taylor Swift&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">name</span><span class="o">.</span><span class="n">upper</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TAYLOR SWIFT
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Sử dụng <em>lower</em> khi muốn viết thường toàn bộ các từ trong chuỗi</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Chuyển chuỗi thành chữ thường</span>
+<span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Taylor Swift&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">name</span><span class="o">.</span><span class="n">lower</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>taylor swift
+</pre></div>
+</div>
+</div>
+</div>
+<p>Ngoài ra, chúng ta cần biết cách chèn biến vào string nữa. Ví dụ chúng ta muốn kết hợp hai biến name và age như ví dụ dưới đây để tạp một lời chào.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define variables</span>
+<span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Alice&quot;</span>
+<span class="n">age</span> <span class="o">=</span> <span class="mi">30</span>
+
+<span class="c1"># Create a personalized greeting message using f-string</span>
+<span class="n">greeting</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;Hi, My name is </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2"> and I am </span><span class="si">{</span><span class="n">age</span><span class="si">}</span><span class="s2"> years old!&quot;</span>
+
+<span class="c1"># Print personalized greeting</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">greeting</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hi, My name is Alice and I am 30 years old!
+</pre></div>
+</div>
+</div>
+</div>
+<p>Trong ví dụ trên chúng ta đặt ksy tự f trước dấu nháy kép, điều này cho phép chúng ta chèn biến vào trong chuối bằng cách đặt tên biến vào trong dấu ngoặc nhọn {name}, {age}. Khi thực hiện chương trình, Python sẽ thay thế {name}, {age} bằng giá trị của biến.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Câu 1</span>
+<span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Alice&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2"> is a great teacher!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Alice is a great teacher!
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Câu 2</span>
+<span class="c1"># Define variables</span>
+<span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Alice&quot;</span>
+
+<span class="c1"># Title case the name</span>
+<span class="n">title_name</span> <span class="o">=</span> <span class="n">name</span><span class="o">.</span><span class="n">title</span><span class="p">()</span>
+
+<span class="c1"># Upper case the name</span>
+<span class="n">upper_name</span> <span class="o">=</span> <span class="n">name</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+
+<span class="c1"># Lower case the name</span>
+<span class="n">lower_name</span> <span class="o">=</span> <span class="n">name</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+
+<span class="c1"># Print the results</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Title case: </span><span class="si">{</span><span class="n">title_name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Upper case: </span><span class="si">{</span><span class="n">upper_name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Lower case: </span><span class="si">{</span><span class="n">lower_name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Title case: Alice
+Upper case: ALICE
+Lower case: alice
+</pre></div>
+</div>
+</div>
+</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -459,12 +590,36 @@ document.write(`
         <p class="prev-next-title">Day 3: Tạo Biến String và Sử Dụng Các Phương Thức</p>
       </div>
     </a>
+    <a class="right-next"
+       href="../introspection/introspection.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Introspection trong Python</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bai-tap">Bài tập</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#huong-dan-giai">Hướng dẫn giải</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>
