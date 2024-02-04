@@ -9,4 +9,6 @@ chapters:
 # - file: markdown-notebooks
 - file: Day1/day1
 - file: Day2/day2
-
+- file: Day3/day3
+- file: Day4/day4
+- file: Introspection/introspection

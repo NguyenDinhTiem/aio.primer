@@ -13,6 +13,7 @@ If you'd like to develop and/or build the I just want to code better book, you s
 3. (Optional) Edit the books source files located in the `aio.primer/` directory
 4. Run `jupyter-book clean aio.primer/` to remove any existing builds
 5. Run `jupyter-book build aio.primer/`
+6. Public github: ghp-import -n -p -f _build/html
 
 A fully-rendered HTML version of the book will be built in `aio.primer/_build/html/`.
 

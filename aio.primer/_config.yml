@@ -33,10 +33,21 @@ repository:
 # Add GitHub buttons to your book
 # See https://jupyterbook.org/customize/config.html#add-a-link-to-your-repository
 html:
+  home_page_in_navbar: true
+  use_issues_button: true
+  use_repository_button: true
+  extra_navbar              : "" #Powered by <a href="https://jupyterbook.org">Jupyter Book</a>  # Will be displayed underneath the left navbar.
+  google_analytics_id       : ""  # A GA id that can be used to track book views.
+  baseurl                   : https://nguyendinhtiem.github.io/aio.primer  # The base URL where your book will be hosted. Used for creating image previews and social links. e.g.: https://mypage.com/mybook/
   comments:
     utterances:
       repo: "NguyenDinhTiem/aio.primer"
-  
+
+#######################################################################################
+# Spinx configuration
+sphinx:
+  config:
+    language: en # assists screen readers  
 
 #######################################################################################
 # Parse settings
