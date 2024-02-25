@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Day 4: Tạo Biến Số và Thực Hiện Các Phép Tính Cơ Bản &#8212; I just want to code better</title>
+    <title>Enumerate &#8212; I just want to code better</title>
   
   
   
@@ -96,10 +96,11 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'Day4/day4';</script>
-    <link rel="canonical" href="https://nguyendinhtiem.github.io/aio.primer/Day4/day4.html" />
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Day6/enumerate';</script>
+    <link rel="canonical" href="https://nguyendinhtiem.github.io/aio.primer/Day6/enumerate.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Introspection trong Python" href="../introspection/introspection.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -201,12 +202,12 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
+        <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../Day1/day1.html">Day 1: Hướng dẫn sử dụng VScode, jupyter notebook và cài đặt, tạo môi trường lập trình trên máy tính.</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Day2/day2.html">Day 2: Tạo Biến và In Ra Màn Hình, Xử lý Lỗi Cú Pháp</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Day3/day3.html">Day 3: Tạo Biến String và Sử Dụng Các Phương Thức</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../introspection/introspection.html">Introspection trong Python</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Day6/enumerate.html">Enumerate</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Enumerate</a></li>
 </ul>
 
     </div>
@@ -278,7 +279,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/NguyenDinhTiem/aio.primer/issues/new?title=Issue%20on%20page%20%2FDay4/day4.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/NguyenDinhTiem/aio.primer/issues/new?title=Issue%20on%20page%20%2FDay6/enumerate.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -308,7 +309,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../_sources/Day4/day4.ipynb" target="_blank"
+      <li><a href="../_sources/Day6/enumerate.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -392,7 +393,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Day 4: Tạo Biến Số và Thực Hiện Các Phép Tính Cơ Bản</h1>
+    <h1>Enumerate</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -402,8 +403,8 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bai-tap">Bài tập</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#huong-dan-giai">Hướng dẫn giải</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bai-1">Bài 1:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bai-2">Bài 2</a></li>
 </ul>
             </nav>
         </div>
@@ -415,81 +416,140 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="day-4-tao-bien-so-va-thuc-hien-cac-phep-tinh-co-ban">
-<h1>Day 4: Tạo Biến Số và Thực Hiện Các Phép Tính Cơ Bản<a class="headerlink" href="#day-4-tao-bien-so-va-thuc-hien-cac-phep-tinh-co-ban" title="Permalink to this heading">#</a></h1>
-<section id="bai-tap">
-<h2>Bài tập<a class="headerlink" href="#bai-tap" title="Permalink to this heading">#</a></h2>
-<ol class="arabic simple">
-<li><p>Viết chương trình tính d</p></li>
-</ol>
-<p>Viết chương trình thực hiện phép tính cộng, trừ, nhân chia sao cho kết quả mỗi phép tính là 5 và biểu thức tính toán được viết bên trong hàm print. Sau đó in ra màn hình kết quả mỗi phép tính trên từng hàng riêng biệt.</p>
-<p>Gợi ý: Bạn sẽ viết biểu thức
-print(2+3)</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Ouput:
+  <section class="tex2jax_ignore mathjax_ignore" id="enumerate">
+<h1>Enumerate<a class="headerlink" href="#enumerate" title="Permalink to this heading">#</a></h1>
+<p><code class="docutils literal notranslate"><span class="pre">enumerate</span></code> là một hàm tích hợp sẵn trong Python cho phép bạn liệt kê qua một chuỗi (list, tuple, hoặc bất kỳ iterable object nào khác) cùng với chỉ số của mỗi phần tử. Giúp dễ dàng thực hiện vòng lặp qua các phần tử trong chuỗi đồng thời lấy được cả chỉ số của phần tử.</p>
+<p>Cú pháp: <code class="docutils literal notranslate"><span class="pre">enumerate(iterable,</span> <span class="pre">start=0)</span></code></p>
+<ul class="simple">
+<li><p>iterable: Đối tượng có thể lặp qua như list, tuple, hoặc chuỗi.</p></li>
+<li><p>start (tùy chọn): Chỉ định chỉ số bắt đầu của enumerate. Mặc định là 0.</p></li>
+</ul>
+<hr class="docutils" />
+<section id="bai-1">
+<h2>Bài 1:<a class="headerlink" href="#bai-1" title="Permalink to this heading">#</a></h2>
+<p>Giả sử bạn có một danh sách mua sắm và bạn muốn đánh số thứ tự của từng món đồ trong danh sách đó để dễ dàng thực hiện việc mua sắm:</p>
+<hr class="docutils" />
+<p>Cách thông thường:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">shopping_list</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Cà rốt&quot;</span><span class="p">,</span> <span class="s2">&quot;Táo&quot;</span><span class="p">,</span> <span class="s2">&quot;Sữa&quot;</span><span class="p">]</span>
 
-5
-
-5
-
-5
-
-5
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Danh sách mua sắm:&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">shopping_list</span><span class="p">)):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">index</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s2">. </span><span class="si">{</span><span class="n">shopping_list</span><span class="p">[</span><span class="n">index</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<ol class="arabic simple" start="2">
-<li></li>
-</ol>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Danh sách mua sắm:
+1. Cà rốt
+2. Táo
+3. Sữa
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">shopping_list</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Cà rốt&quot;</span><span class="p">,</span> <span class="s2">&quot;Táo&quot;</span><span class="p">,</span> <span class="s2">&quot;Sữa&quot;</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Danh sách mua sắm:&quot;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">item</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">shopping_list</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">index</span><span class="si">}</span><span class="s2">. </span><span class="si">{</span><span class="n">item</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Danh sách mua sắm:
+1. Cà rốt
+2. Táo
+3. Sữa
+</pre></div>
+</div>
+</div>
+</div>
 </section>
-<section id="huong-dan-giai">
-<h2>Hướng dẫn giải<a class="headerlink" href="#huong-dan-giai" title="Permalink to this heading">#</a></h2>
+<hr class="docutils" />
+<section id="bai-2">
+<h2>Bài 2<a class="headerlink" href="#bai-2" title="Permalink to this heading">#</a></h2>
+<p>Viết một chương trình Python để tìm kiếm và in ra vị trí của một số mặt hàng trong một danh sách thực phẩm hai chiều.</p>
+<p>Danh sách thực phẩm được biểu diễn dưới dạng một list hai chiều, trong đó mỗi hàng chứa thông tin về các mặt hàng có sẵn trong cửa hàng.</p>
+<p>Yêu cầu của bạn là tìm kiếm và in ra vị trí của mỗi mặt hàng trong danh sách tìm kiếm trong danh sách thực phẩm. Chương trình cần in ra hàng và cột của từng mặt hàng được tìm thấy.</p>
+<p>Dưới đây là danh sách thực phẩm:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">food_list</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">[</span><span class="s2">&quot;Bơ&quot;</span><span class="p">,</span> <span class="s2">&quot;Pizza&quot;</span><span class="p">,</span> <span class="s2">&quot;Sữa&quot;</span><span class="p">],</span>
+    <span class="p">[</span><span class="s2">&quot;Xúc xích&quot;</span><span class="p">,</span> <span class="s2">&quot;Táo&quot;</span><span class="p">,</span> <span class="s2">&quot;Kem&quot;</span><span class="p">],</span>
+    <span class="p">[</span><span class="s2">&quot;Cà rốt&quot;</span><span class="p">,</span> <span class="s2">&quot;Bánh dâu&quot;</span><span class="p">,</span> <span class="s2">&quot;Cupcake&quot;</span><span class="p">]</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<p>Các mặt hàng cần tìm kiếm có trong danh sách sau:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">search_items</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Cà rốt&quot;</span><span class="p">,</span> <span class="s2">&quot;Táo&quot;</span><span class="p">,</span> <span class="s2">&quot;Sữa&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Hãy viết chương trình để thực hiện nhiệm vụ trên. Chú ý rằng chỉ số hàng và cột bắt đầu từ 1.</p>
+<p>Gợi ý: Sử dụng vòng lặp để duyệt qua từng phần tử trong danh sách thực phẩm, sau đó kiểm tra xem mỗi mặt hàng có trong danh sách tìm kiếm không. Nếu có, in ra vị trí của mặt hàng đó. Để truy cập hàng và cột của từng mặt hàng, bạn có thể sử dụng vòng lặp <code class="docutils literal notranslate"><span class="pre">for</span></code> hoặc hàm <code class="docutils literal notranslate"><span class="pre">enumerate</span></code>.</p>
+<hr class="docutils" />
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">3</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="mi">9</span> <span class="o">-</span> <span class="mi">4</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="mf">2.5</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="mi">10</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">food_list</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">[</span><span class="s2">&quot;Bơ&quot;</span><span class="p">,</span> <span class="s2">&quot;Pizza&quot;</span><span class="p">,</span> <span class="s2">&quot;Sữa&quot;</span><span class="p">],</span>
+    <span class="p">[</span><span class="s2">&quot;Xúc xích&quot;</span><span class="p">,</span> <span class="s2">&quot;Táo&quot;</span><span class="p">,</span> <span class="s2">&quot;Kem&quot;</span><span class="p">],</span>
+    <span class="p">[</span><span class="s2">&quot;Cà rốt&quot;</span><span class="p">,</span> <span class="s2">&quot;Bánh dâu&quot;</span><span class="p">,</span> <span class="s2">&quot;Cupcake&quot;</span><span class="p">]</span>
+<span class="p">]</span>
+
+<span class="n">search_items</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Cà rốt&quot;</span><span class="p">,</span> <span class="s2">&quot;Táo&quot;</span><span class="p">,</span> <span class="s2">&quot;Sữa&quot;</span><span class="p">]</span>
+
+<span class="c1"># Lặp qua từng hàng của danh sách thực phẩm</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">food_list</span><span class="p">)):</span>
+    <span class="c1"># Lặp qua từng phần tử trong hàng đó</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">food_list</span><span class="p">[</span><span class="n">i</span><span class="p">])):</span>
+        <span class="c1"># Kiểm tra xem phần tử có trong </span>
+        <span class="c1"># danh sách tìm kiếm không</span>
+        <span class="k">if</span> <span class="n">food_list</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span> <span class="ow">in</span> <span class="n">search_items</span><span class="p">:</span>
+            <span class="c1"># In ra vị trí nếu phần tử được tìm thấy</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">food_list</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="si">}</span><span class="s2"> được tìm &quot;</span> 
+                  <span class="sa">f</span><span class="s2">&quot;thấy ở hàng </span><span class="si">{</span><span class="n">i</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="si">}</span><span class="s2"> và cột </span><span class="si">{</span><span class="n">j</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5
-5
-5.0
-5.0
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Sữa được tìm thấy ở hàng 1 và cột 3.
+Táo được tìm thấy ở hàng 2 và cột 2.
+Cà rốt được tìm thấy ở hàng 3 và cột 1.
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">3</span><span class="o">*</span><span class="mf">0.1</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">food_list</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">[</span><span class="s2">&quot;Bơ&quot;</span><span class="p">,</span> <span class="s2">&quot;Pizza&quot;</span><span class="p">,</span> <span class="s2">&quot;Sữa&quot;</span><span class="p">],</span>
+    <span class="p">[</span><span class="s2">&quot;Xúc xích&quot;</span><span class="p">,</span> <span class="s2">&quot;Táo&quot;</span><span class="p">,</span> <span class="s2">&quot;Kem&quot;</span><span class="p">],</span>
+    <span class="p">[</span><span class="s2">&quot;Cà rốt&quot;</span><span class="p">,</span> <span class="s2">&quot;Bánh dâu&quot;</span><span class="p">,</span> <span class="s2">&quot;Cupcake&quot;</span><span class="p">]</span>
+<span class="p">]</span>
+
+<span class="n">search_items</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Cà rốt&quot;</span><span class="p">,</span> <span class="s2">&quot;Táo&quot;</span><span class="p">,</span> <span class="s2">&quot;Sữa&quot;</span><span class="p">]</span>
+
+<span class="c1"># Lặp qua từng hàng của danh sách thực phẩm</span>
+<span class="c1"># và lấy ra chỉ số của hàng đó</span>
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">food_list</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>  
+    <span class="c1"># Lặp qua từng phần tử trong hàng </span>
+    <span class="c1"># và lấy ra chỉ số của phần tử đó</span>
+    <span class="k">for</span> <span class="n">j</span><span class="p">,</span> <span class="n">item</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">row</span><span class="p">,</span> <span class="n">start</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>  
+        <span class="c1"># Kiểm tra xem phần tử có trong </span>
+        <span class="c1"># danh sách tìm kiếm không</span>
+        <span class="k">if</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">search_items</span><span class="p">:</span>
+            <span class="c1"># In ra vị trí nếu phần tử được tìm thấy</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">item</span><span class="si">}</span><span class="s2"> được tìm thấy &quot;</span> 
+                  <span class="sa">f</span><span class="s2">&quot;ở hàng </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2"> và cột </span><span class="si">{</span><span class="n">j</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.30000000000000004
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Display Conda version with conda –version</span>
-<span class="n">conda</span> <span class="o">--</span><span class="n">version</span> 
-<span class="c1"># List environments with conda env list</span>
-<span class="n">conda</span> <span class="n">env</span> <span class="nb">list</span>
-<span class="c1"># Create an environment for technology with conda create -n {env}</span>
-<span class="n">conda</span> <span class="n">create</span> <span class="o">--</span><span class="n">name</span> <span class="n">my_python_env</span> <span class="n">python</span><span class="o">=</span><span class="mf">3.8</span>
-<span class="c1"># Activate the environment with conda activate {env}</span>
-<span class="n">conda</span> <span class="n">activate</span> <span class="n">my_env</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-    <span class="n">conda</span> <span class="o">--</span><span class="n">version</span>
-                   <span class="o">^</span>
-<span class="ne">SyntaxError</span>: invalid character in identifier
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Sữa được tìm thấy ở hàng 1 và cột 3.
+Táo được tìm thấy ở hàng 2 và cột 2.
+Cà rốt được tìm thấy ở hàng 3 và cột 1.
 </pre></div>
 </div>
 </div>
@@ -510,7 +570,7 @@ print(2+3)</p>
         },
         kernelOptions: {
             name: "python3",
-            path: "./Day4"
+            path: "./Day6"
         },
         predefinedOutput: true
     }
@@ -527,6 +587,15 @@ print(2+3)</p>
                 <footer class="prev-next-footer">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="../introspection/introspection.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Introspection trong Python</p>
+      </div>
+    </a>
 </div>
                 </footer>
               
@@ -542,8 +611,8 @@ print(2+3)</p>
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bai-tap">Bài tập</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#huong-dan-giai">Hướng dẫn giải</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bai-1">Bài 1:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bai-2">Bài 2</a></li>
 </ul>
   </nav></div>
 

@@ -208,6 +208,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../Day2/day2.html">Day 2: Tạo Biến và In Ra Màn Hình, Xử lý Lỗi Cú Pháp</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Day 3: Tạo Biến String và Sử Dụng Các Phương Thức</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../introspection/introspection.html">Introspection trong Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Day6/enumerate.html">Enumerate</a></li>
 </ul>
 
     </div>
@@ -403,7 +404,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bai-tap">Bài tập</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bai-tap">Bài tập:</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#huong-dan-giai">Hướng dẫn giải</a></li>
 </ul>
             </nav>
@@ -419,10 +420,20 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="day-3-tao-bien-string-va-su-dung-cac-phuong-thuc">
 <h1>Day 3: Tạo Biến String và Sử Dụng Các Phương Thức<a class="headerlink" href="#day-3-tao-bien-string-va-su-dung-cac-phuong-thuc" title="Permalink to this heading">#</a></h1>
 <section id="bai-tap">
-<h2>Bài tập<a class="headerlink" href="#bai-tap" title="Permalink to this heading">#</a></h2>
-<ol class="arabic simple">
-<li><p>Tạo một biến name đại diện tên của bạn, và hiển thị ra màn hình một thông báo chứa tên đó. Ví dụ mình tên Tom, mình sẽ in ra màn hình nội dung như “Tom love fish!”</p></li>
-<li><p>Tạo một biến tham chiếu đến tên của một người, sau đó thực hiện in ra màn hình tên người đó được viết toàn bộ bằng chữ thường, chữ hoa, hoặc chỉ viết hoa từ đầu tiên mỗi chữ.</p></li>
+<h2>Bài tập:<a class="headerlink" href="#bai-tap" title="Permalink to this heading">#</a></h2>
+<ol class="arabic">
+<li><p>Tạo một biến <code class="docutils literal notranslate"><span class="pre">name</span></code> gán giá trị là tên một người, sau đó hiển thị ra màn hình một thông báo chứa tên đó sử dụng <code class="docutils literal notranslate"><span class="pre">f-string</span></code>. Ví dụ <code class="docutils literal notranslate"><span class="pre">name</span> <span class="pre">=</span> <span class="pre">&quot;Alice&quot;</span></code>, mình sẽ in ra màn hình nội dung là <code class="docutils literal notranslate"><span class="pre">&quot;Alice</span> <span class="pre">is</span> <span class="pre">a</span> <span class="pre">great</span> <span class="pre">teacher!&quot;</span></code></p></li>
+<li><p>Tạo một biến và gán giá trị <code class="docutils literal notranslate"><span class="pre">&quot;ms</span> <span class="pre">Taylor&quot;</span></code> cho nó, sau đó thực hiện in ra màn hình giá trị biến đó được viết hoa các từ đầu tiên mỗi chữ hoặc viết toàn bộ bằng chữ chữ hoa, hoặc chữ thường.</p>
+<p>Input: 	name = “ms Taylor”</p>
+<p>Output:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span> Title case: Ms Taylor 
+
+ Upper case: MS TAYLOR 
+ 
+ Lower case: ms taylor
+</pre></div>
+</div>
+</li>
 </ol>
 </section>
 <section id="huong-dan-giai">
@@ -484,25 +495,20 @@ document.write(`
 <p>Ngoài ra, chúng ta cần biết cách chèn biến vào string nữa. Ví dụ chúng ta muốn kết hợp hai biến name và age như ví dụ dưới đây để tạp một lời chào.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define variables</span>
-<span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Alice&quot;</span>
-<span class="n">age</span> <span class="o">=</span> <span class="mi">30</span>
-
-<span class="c1"># Create a personalized greeting message using f-string</span>
-<span class="n">greeting</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;Hi, My name is </span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2"> and I am </span><span class="si">{</span><span class="n">age</span><span class="si">}</span><span class="s2"> years old!&quot;</span>
-
-<span class="c1"># Print personalized greeting</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">greeting</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">student_name</span> <span class="o">=</span> <span class="s2">&quot;Tom&quot;</span>
+<span class="n">class_name</span> <span class="o">=</span> <span class="s2">&quot;AI VIETNAM&quot;</span>
+<span class="n">message</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">student_name</span><span class="si">}</span><span class="s2"> học lập trình tại</span><span class="si">{</span><span class="n">class_name</span><span class="si">}</span><span class="s2">&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hi, My name is Alice and I am 30 years old!
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Tom học lập trình tạiAI VIETNAM
 </pre></div>
 </div>
 </div>
 </div>
-<p>Trong ví dụ trên chúng ta đặt ksy tự f trước dấu nháy kép, điều này cho phép chúng ta chèn biến vào trong chuối bằng cách đặt tên biến vào trong dấu ngoặc nhọn {name}, {age}. Khi thực hiện chương trình, Python sẽ thay thế {name}, {age} bằng giá trị của biến.</p>
+<p>Trong ví dụ trên chúng ta đặt ký tự f trước dấu nháy kép, điều này cho phép chúng ta chèn biến vào trong chuối bằng cách đặt tên biến vào trong dấu ngoặc nhọn {student_name}, {class_name}. Khi thực hiện chương trình, Python sẽ thay thế {student_name}, {class_name} bằng giá trị của biến.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Câu 1</span>
@@ -521,7 +527,7 @@ document.write(`
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Câu 2</span>
 <span class="c1"># Define variables</span>
-<span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Alice&quot;</span>
+<span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;ms Taylor&quot;</span>
 
 <span class="c1"># Title case the name</span>
 <span class="n">title_name</span> <span class="o">=</span> <span class="n">name</span><span class="o">.</span><span class="n">title</span><span class="p">()</span>
@@ -540,9 +546,9 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Title case: Alice
-Upper case: ALICE
-Lower case: alice
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Title case: Ms Taylor
+Upper case: MS TAYLOR
+Lower case: ms taylor
 </pre></div>
 </div>
 </div>
@@ -613,7 +619,7 @@ Lower case: alice
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bai-tap">Bài tập</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#bai-tap">Bài tập:</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#huong-dan-giai">Hướng dẫn giải</a></li>
 </ul>
   </nav></div>

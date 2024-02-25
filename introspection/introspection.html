@@ -100,6 +100,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="canonical" href="https://nguyendinhtiem.github.io/aio.primer/introspection/introspection.html" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Enumerate" href="../Day6/enumerate.html" />
     <link rel="prev" title="Day 3: Tạo Biến String và Sử Dụng Các Phương Thức" href="../Day3/day3.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -207,6 +208,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../Day2/day2.html">Day 2: Tạo Biến và In Ra Màn Hình, Xử lý Lỗi Cú Pháp</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Day3/day3.html">Day 3: Tạo Biến String và Sử Dụng Các Phương Thức</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Introspection trong Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Day6/enumerate.html">Enumerate</a></li>
 </ul>
 
     </div>
@@ -410,9 +412,9 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ham-help">Hàm <code class="docutils literal notranslate"><span class="pre">help()</span></code></a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Cách sử dụng:</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Ví dụ:</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vi-du-voi-custorm-class">Ví dụ với custorm class</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vi-du-voi-custom-class">Ví dụ với Custom class</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tong-ket">Tổng kết</a></li>
 </ul>
             </nav>
@@ -427,16 +429,16 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="introspection-trong-python">
 <h1>Introspection trong Python<a class="headerlink" href="#introspection-trong-python" title="Permalink to this heading">#</a></h1>
-<p>Chắc là mình sẽ bắt đầu bằng câu hỏi kiểu:</p>
+<p>Chắc là chúng ta sẽ bắt đầu bằng câu hỏi kiểu:</p>
 <ul class="simple">
-<li><p>Biến này mình đang dùng có kiểu dữ liệu là gì nhỉ? Số nguyên hay số thực…</p></li>
-<li><p>Mình cài rất nhiều thư viện nhưng mình không nhớ hết được các phương thức trong nó, làm thế nào để xem tóm tắt những chức năng mà thư viện cung cấp một cách nhanh chóng?..</p></li>
+<li><p>Biến này đang dùng có kiểu dữ liệu là gì nhỉ? Số nguyên hay số thực…</p></li>
+<li><p>Ta cài rất nhiều thư viện nhưng không nhớ hết được các phương thức trong nó, làm thế nào để xem tóm tắt những chức năng mà thư viện cung cấp một cách nhanh chóng?..</p></li>
 </ul>
-<p>Trong lập trình Python và hầu hết các ngôn ngữ lập trình khác, Introspection là khả năng cho phép chúng ta kiểm tra, truy vấn thông tin của chương trình trong quá trình thực thi. Tức là khi thực thi chương trình Python, chúng ta có thể kiểm tra kiểu dữ liệu, thuộc tính, phương thức của đối tượng cũng như thông tin về một thư viện, module, package.</p>
-<p>Python cung cấp nhiều công cụ hỗ trợ introspection, trong hướng dẫn này mình sẽ tìm hiểu về hai hàm hỗ trợ phổ biến trong Python là <code class="docutils literal notranslate"><span class="pre">type()</span></code> và <code class="docutils literal notranslate"><span class="pre">help()</span></code>.</p>
+<p>Trong lập trình Python và hầu hết các ngôn ngữ lập trình khác, Introspection là khả năng cho phép chúng ta kiểm tra, truy vấn thông tin của chương trình trong quá trình thực thi. Tức là khi thực thi chương trình Python, chúng ta có thể kiểm tra kiểu dữ liệu, thuộc tính, phương thức của đối tượng cũng như thông tin về một thư viện, package.</p>
+<p>Python cung cấp nhiều công cụ hỗ trợ introspection, trong hướng dẫn này chúng ta sẽ tìm hiểu về hai hàm hỗ trợ phổ biến trong Python là <code class="docutils literal notranslate"><span class="pre">type()</span></code> và <code class="docutils literal notranslate"><span class="pre">help()</span></code>.</p>
 <section id="ham-type">
 <h2>Hàm <code class="docutils literal notranslate"><span class="pre">type()</span></code><a class="headerlink" href="#ham-type" title="Permalink to this heading">#</a></h2>
-<p>Hàm <code class="docutils literal notranslate"><span class="pre">type()</span></code> được sử dụng để biết kiểu của một đối tượng. Nó trả về kiểu đối tượng, cho phép bạn hiểu loại đối tượng bạn đang làm việc với. Điều này có thể hữu ích khi bạn đang xử lý các biến mà bạn không chắc chắn về kiểu dữ liệu của chúng.</p>
+<p>Hàm <code class="docutils literal notranslate"><span class="pre">type()</span></code> được sử dụng để kiểm tra kiểu của một đối tượng. Nó trả về kiểu đối tượng giúp bạn biết kiểu dữ liệu của đối tượng bạn đang sử dụng là gì. Điều này có thể hữu ích khi bạn đang xử lý các biến mà bạn không chắc chắn về kiểu dữ liệu của chúng.</p>
 <section id="cach-su-dung">
 <h3>Cách sử dụng:<a class="headerlink" href="#cach-su-dung" title="Permalink to this heading">#</a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="nb">object</span><span class="p">)</span>
@@ -461,19 +463,19 @@ document.write(`
 </div>
 </div>
 </div>
-<p>Kết quả sẽ cho biết <code class="docutils literal notranslate"><span class="pre">x</span></code> là một đối tượng của kiểu <code class="docutils literal notranslate"><span class="pre">int</span></code>.</p>
+<p>Kết quả sẽ cho biết <code class="docutils literal notranslate"><span class="pre">x</span></code> là một đối tượng có kiểu <code class="docutils literal notranslate"><span class="pre">int</span></code>.</p>
 </section>
 </section>
 <section id="ham-help">
 <h2>Hàm <code class="docutils literal notranslate"><span class="pre">help()</span></code><a class="headerlink" href="#ham-help" title="Permalink to this heading">#</a></h2>
-<p>Hàm <code class="docutils literal notranslate"><span class="pre">help()</span></code> cung cấp một cách thuận tiện để truy cập vào tài liệu trợ giúp của Python cho các đối tượng, modules, hàm, phương thức, từ khóa. Khi bạn gọi <code class="docutils literal notranslate"><span class="pre">help()</span></code> với một đối tượng cụ thể, Python sẽ trả về tài liệu liên quan đến đối tượng đó.</p>
+<p>Hàm <code class="docutils literal notranslate"><span class="pre">help()</span></code> giúp truy cập vào tài liệu trợ giúp của Python cho các đối tượng, modules, hàm, phương thức, từ khóa. Khi bạn gọi <code class="docutils literal notranslate"><span class="pre">help()</span></code> với một đối tượng cụ thể, Python sẽ trả về tài liệu liên quan đến đối tượng đó.</p>
 <section id="id1">
 <h3>Cách sử dụng:<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="nb">object</span><span class="p">)</span>
 </pre></div>
 </div>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">object</span></code>: Đối tượng mà bạn muốn nhận thông tin trợ giúp.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">object</span></code>: Đối tượng mà bạn muốn xem tài liệu hướng dẫn.</p></li>
 </ul>
 </section>
 <section id="id2">
@@ -884,11 +886,289 @@ class str(object)
 </div>
 </div>
 </div>
-<p>Kết quả sẽ hiển thị tài liệu trợ giúp cho lớp <code class="docutils literal notranslate"><span class="pre">str</span></code>, bao gồm các phương thức có sẵn, cách sử dụng chúng, và mô tả chi tiết về chức năng của chúng.</p>
+<p>Kết quả sẽ hiển thị tài liệu hướng dẫn cho lớp <code class="docutils literal notranslate"><span class="pre">str</span></code>, bao gồm các phương thức có sẵn, cách sử dụng, và mô tả chi tiết về chức năng của chúng.</p>
+<p>Tương tự string, chúng ta có thể xem tài liệu hướng dẫn của thư viện <code class="docutils literal notranslate"><span class="pre">math</span></code> dưới đây.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+<span class="n">help</span><span class="p">(</span><span class="n">math</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Help on built-in module math:
+
+NAME
+    math
+
+DESCRIPTION
+    This module provides access to the mathematical functions
+    defined by the C standard.
+
+FUNCTIONS
+    acos(x, /)
+        Return the arc cosine (measured in radians) of x.
+    
+    acosh(x, /)
+        Return the inverse hyperbolic cosine of x.
+    
+    asin(x, /)
+        Return the arc sine (measured in radians) of x.
+    
+    asinh(x, /)
+        Return the inverse hyperbolic sine of x.
+    
+    atan(x, /)
+        Return the arc tangent (measured in radians) of x.
+    
+    atan2(y, x, /)
+        Return the arc tangent (measured in radians) of y/x.
+        
+        Unlike atan(y/x), the signs of both x and y are considered.
+    
+    atanh(x, /)
+        Return the inverse hyperbolic tangent of x.
+    
+    ceil(x, /)
+        Return the ceiling of x as an Integral.
+        
+        This is the smallest integer &gt;= x.
+    
+    comb(n, k, /)
+        Number of ways to choose k items from n items without repetition and without order.
+        
+        Evaluates to n! / (k! * (n - k)!) when k &lt;= n and evaluates
+        to zero when k &gt; n.
+        
+        Also called the binomial coefficient because it is equivalent
+        to the coefficient of k-th term in polynomial expansion of the
+        expression (1 + x)**n.
+        
+        Raises TypeError if either of the arguments are not integers.
+        Raises ValueError if either of the arguments are negative.
+    
+    copysign(x, y, /)
+        Return a float with the magnitude (absolute value) of x but the sign of y.
+        
+        On platforms that support signed zeros, copysign(1.0, -0.0)
+        returns -1.0.
+    
+    cos(x, /)
+        Return the cosine of x (measured in radians).
+    
+    cosh(x, /)
+        Return the hyperbolic cosine of x.
+    
+    degrees(x, /)
+        Convert angle x from radians to degrees.
+    
+    dist(p, q, /)
+        Return the Euclidean distance between two points p and q.
+        
+        The points should be specified as sequences (or iterables) of
+        coordinates.  Both inputs must have the same dimension.
+        
+        Roughly equivalent to:
+            sqrt(sum((px - qx) ** 2.0 for px, qx in zip(p, q)))
+    
+    erf(x, /)
+        Error function at x.
+    
+    erfc(x, /)
+        Complementary error function at x.
+    
+    exp(x, /)
+        Return e raised to the power of x.
+    
+    expm1(x, /)
+        Return exp(x)-1.
+        
+        This function avoids the loss of precision involved in the direct evaluation of exp(x)-1 for small x.
+    
+    fabs(x, /)
+        Return the absolute value of the float x.
+    
+    factorial(x, /)
+        Find x!.
+        
+        Raise a ValueError if x is negative or non-integral.
+    
+    floor(x, /)
+        Return the floor of x as an Integral.
+        
+        This is the largest integer &lt;= x.
+    
+    fmod(x, y, /)
+        Return fmod(x, y), according to platform C.
+        
+        x % y may differ.
+    
+    frexp(x, /)
+        Return the mantissa and exponent of x, as pair (m, e).
+        
+        m is a float and e is an int, such that x = m * 2.**e.
+        If x is 0, m and e are both 0.  Else 0.5 &lt;= abs(m) &lt; 1.0.
+    
+    fsum(seq, /)
+        Return an accurate floating point sum of values in the iterable seq.
+        
+        Assumes IEEE-754 floating point arithmetic.
+    
+    gamma(x, /)
+        Gamma function at x.
+    
+    gcd(x, y, /)
+        greatest common divisor of x and y
+    
+    hypot(...)
+        hypot(*coordinates) -&gt; value
+        
+        Multidimensional Euclidean distance from the origin to a point.
+        
+        Roughly equivalent to:
+            sqrt(sum(x**2 for x in coordinates))
+        
+        For a two dimensional point (x, y), gives the hypotenuse
+        using the Pythagorean theorem:  sqrt(x*x + y*y).
+        
+        For example, the hypotenuse of a 3/4/5 right triangle is:
+        
+            &gt;&gt;&gt; hypot(3.0, 4.0)
+            5.0
+    
+    isclose(a, b, *, rel_tol=1e-09, abs_tol=0.0)
+        Determine whether two floating point numbers are close in value.
+        
+          rel_tol
+            maximum difference for being considered &quot;close&quot;, relative to the
+            magnitude of the input values
+          abs_tol
+            maximum difference for being considered &quot;close&quot;, regardless of the
+            magnitude of the input values
+        
+        Return True if a is close in value to b, and False otherwise.
+        
+        For the values to be considered close, the difference between them
+        must be smaller than at least one of the tolerances.
+        
+        -inf, inf and NaN behave similarly to the IEEE 754 Standard.  That
+        is, NaN is not close to anything, even itself.  inf and -inf are
+        only close to themselves.
+    
+    isfinite(x, /)
+        Return True if x is neither an infinity nor a NaN, and False otherwise.
+    
+    isinf(x, /)
+        Return True if x is a positive or negative infinity, and False otherwise.
+    
+    isnan(x, /)
+        Return True if x is a NaN (not a number), and False otherwise.
+    
+    isqrt(n, /)
+        Return the integer part of the square root of the input.
+    
+    ldexp(x, i, /)
+        Return x * (2**i).
+        
+        This is essentially the inverse of frexp().
+    
+    lgamma(x, /)
+        Natural logarithm of absolute value of Gamma function at x.
+    
+    log(...)
+        log(x, [base=math.e])
+        Return the logarithm of x to the given base.
+        
+        If the base not specified, returns the natural logarithm (base e) of x.
+    
+    log10(x, /)
+        Return the base 10 logarithm of x.
+    
+    log1p(x, /)
+        Return the natural logarithm of 1+x (base e).
+        
+        The result is computed in a way which is accurate for x near zero.
+    
+    log2(x, /)
+        Return the base 2 logarithm of x.
+    
+    modf(x, /)
+        Return the fractional and integer parts of x.
+        
+        Both results carry the sign of x and are floats.
+    
+    perm(n, k=None, /)
+        Number of ways to choose k items from n items without repetition and with order.
+        
+        Evaluates to n! / (n - k)! when k &lt;= n and evaluates
+        to zero when k &gt; n.
+        
+        If k is not specified or is None, then k defaults to n
+        and the function returns n!.
+        
+        Raises TypeError if either of the arguments are not integers.
+        Raises ValueError if either of the arguments are negative.
+    
+    pow(x, y, /)
+        Return x**y (x to the power of y).
+    
+    prod(iterable, /, *, start=1)
+        Calculate the product of all the elements in the input iterable.
+        
+        The default start value for the product is 1.
+        
+        When the iterable is empty, return the start value.  This function is
+        intended specifically for use with numeric values and may reject
+        non-numeric types.
+    
+    radians(x, /)
+        Convert angle x from degrees to radians.
+    
+    remainder(x, y, /)
+        Difference between x and the closest integer multiple of y.
+        
+        Return x - n*y where n*y is the closest integer multiple of y.
+        In the case where x is exactly halfway between two multiples of
+        y, the nearest even value of n is used. The result is always exact.
+    
+    sin(x, /)
+        Return the sine of x (measured in radians).
+    
+    sinh(x, /)
+        Return the hyperbolic sine of x.
+    
+    sqrt(x, /)
+        Return the square root of x.
+    
+    tan(x, /)
+        Return the tangent of x (measured in radians).
+    
+    tanh(x, /)
+        Return the hyperbolic tangent of x.
+    
+    trunc(x, /)
+        Truncates the Real x to the nearest Integral toward 0.
+        
+        Uses the __trunc__ magic method.
+
+DATA
+    e = 2.718281828459045
+    inf = inf
+    nan = nan
+    pi = 3.141592653589793
+    tau = 6.283185307179586
+
+FILE
+    (built-in)
+</pre></div>
+</div>
+</div>
+</div>
 </section>
-<section id="vi-du-voi-custorm-class">
-<h3>Ví dụ với custorm class<a class="headerlink" href="#vi-du-voi-custorm-class" title="Permalink to this heading">#</a></h3>
-<p>Giả sử bạn đang làm việc với một ứng dụng Python đơn giản để quản lý danh sách sản phẩm trong một cửa hàng. Bạn đã tạo một class Product để đại diện cho các sản phẩm trong cửa hàng. Hãy xem cách bạn có thể sử dụng introspection để khám phá các phương thức và thuộc tính của đối tượng Product:</p>
+</section>
+<section id="vi-du-voi-custom-class">
+<h2>Ví dụ với Custom class<a class="headerlink" href="#vi-du-voi-custom-class" title="Permalink to this heading">#</a></h2>
+<p>Giả sử ta đang xây dựng một chương trình Python đơn giản để quản lý danh sách sản phẩm trong một cửa hàng. Ta đã tạo một class Product để đại diện cho các sản phẩm trong cửa hàng. Dưới đây là cách ta thể sử dụng introspection để tìm hiểu các phương thức và thuộc tính của đối tượng Product:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Product</span><span class="p">:</span>
@@ -919,15 +1199,49 @@ display_info() method of __main__.Product instance
 </div>
 </div>
 </div>
-<p>Kết quả của đoạn mã trên sẽ cung cấp cho bạn thông tin về kiểu dữ liệu của đối tượng Product và hiển thị thông tin trợ giúp về phương thức display_info. Điều này giúp bạn hiểu rõ hơn về cách sử dụng và tương tác với các thành phần của đối tượng Product trong ứng dụng của mình.</p>
-</section>
+<p>Bạn nên thêm comment vào phương thức để tạo document chi tiết hơn.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Product</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">price</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">price</span> <span class="o">=</span> <span class="n">price</span>
+
+    <span class="k">def</span> <span class="nf">display_info</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Hiển thị thông tin của sản phẩm, bao gồm name và price.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Product: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">, Price: $</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">price</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Tạo một đối tượng Product</span>
+<span class="n">product2</span> <span class="o">=</span> <span class="n">Product</span><span class="p">(</span><span class="s2">&quot;TV&quot;</span><span class="p">,</span> <span class="mi">10000</span><span class="p">)</span>
+
+<span class="c1"># Sử dụng type() để kiểm tra kiểu dữ liệu của đối tượng</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">product2</span><span class="p">))</span>
+
+<span class="c1"># Sử dụng help() để hiển thị thông tin trợ giúp về phương thức display_info</span>
+<span class="n">help</span><span class="p">(</span><span class="n">product2</span><span class="o">.</span><span class="n">display_info</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;__main__.Product&#39;&gt;
+Help on method display_info in module __main__:
+
+display_info() method of __main__.Product instance
+    Hiển thị thông tin của sản phẩm, bao gồm name và price.
+</pre></div>
+</div>
+</div>
+</div>
+<p>Kết quả của đoạn mã trên sẽ trả về thông tin kiểu dữ liệu của đối tượng <code class="docutils literal notranslate"><span class="pre">Product</span></code> và hiển thị thông tin về phương thức <code class="docutils literal notranslate"><span class="pre">display_info</span></code>. Nó giúp ta hiểu rõ hơn về cách sử dụng và tương tác với các thành phần của đối tượng <code class="docutils literal notranslate"><span class="pre">Product</span></code> trong ứng dụng.</p>
 </section>
 <section id="tong-ket">
 <h2>Tổng kết<a class="headerlink" href="#tong-ket" title="Permalink to this heading">#</a></h2>
 <p>Cả <code class="docutils literal notranslate"><span class="pre">type()</span></code> và <code class="docutils literal notranslate"><span class="pre">help()</span></code> đều là những công cụ hữu ích cho việc introspection trong Python:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">type()</span></code> cho phép bạn xác định kiểu của đối tượng, giúp hiểu rõ cách thức hoạt động của chúng trong chương trình của bạn.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">help()</span></code> cung cấp thông tin chi tiết và tài liệu về cách sử dụng các đối tượng, giúp bạn tìm hiểu và sử dụng chúng một cách hiệu quả.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">type()</span></code> cho phép ta xác định kiểu của đối tượng, giúp hiểu rõ cách thức hoạt động của chúng trong chương trình.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">help()</span></code> cung cấp thông tin chi tiết và tài liệu về cách sử dụng các đối tượng, giúp ta tìm hiểu và sử dụng chúng một cách hiệu quả.</p></li>
 </ul>
 </section>
 </section>
@@ -971,6 +1285,15 @@ display_info() method of __main__.Product instance
         <p class="prev-next-title">Day 3: Tạo Biến String và Sử Dụng Các Phương Thức</p>
       </div>
     </a>
+    <a class="right-next"
+       href="../Day6/enumerate.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Enumerate</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div>
                 </footer>
               
@@ -994,9 +1317,9 @@ display_info() method of __main__.Product instance
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ham-help">Hàm <code class="docutils literal notranslate"><span class="pre">help()</span></code></a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Cách sử dụng:</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Ví dụ:</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#vi-du-voi-custorm-class">Ví dụ với custorm class</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vi-du-voi-custom-class">Ví dụ với Custom class</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tong-ket">Tổng kết</a></li>
 </ul>
   </nav></div>
